@@ -26,7 +26,7 @@ async function main() {
   } catch(err) {
     throw new Error("Error listing ./zones directory");
   }
-  for (const f of files) {
+  for (const f of files.filter(file => file.toLowerCase().endsWith('.s3d'))) {
     if (processQueue.length >= MAX_PROCESS_QUEUE_SIZE) {
       await Promise.all(processQueue);
       processQueue = [];
