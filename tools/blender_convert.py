@@ -78,5 +78,5 @@ def set_noclip_uv_none(me):
                 me.materials.append(bpy.data.materials["NOCLIP"])
             face.material_index = me.materials.keys().index("NOCLIP")
 
-#convert_zones()
+convert_zones()
 convert_objects()
